@@ -104,7 +104,34 @@
      </div>
 
      <!-- json reqest box this show when json perameter are checked -->
-    
+     <div class="my-3" id="requestJsonBox">
+        <div class="form-group row">
+            <label for="requestJsonText" class="col-sm-2 col-form-label">Enter Request Json</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="requestJsonText" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- submit button to trigger fetch api -->
+    <div class="mb-3 row">
+                <div class="col-sm-10">
+          <button class="btn btn-primary" id="submit">submit</button>
+        </div>
+      </div>
+
+      <!-- response text area and that will give your respone from api -->
+      <div class="my-3" id="responseJsonBox">
+        <div class="form-group row">
+            <label for="responseJsonText" class="col-sm-2 col-form-label">Response</label>
+            <div class="col-sm-10">
+                <!-- <textarea class="form-control" id="responseJsonText" rows="3">Your response will appear here</textarea> -->
+
+                <pre id='responsePre' class="language-javascript"> <code id='responsePrism' class="language-javascript"> Your response will appear here </code> </pre>
+            </div>
+        </div>
+    </div>
+
       </div>
 
     
