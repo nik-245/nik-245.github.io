@@ -30,6 +30,9 @@ jsonRadio.addEventListener('click' , ()=>{
 
 });
 
+
+//if user click on + and - button then whot to do and how to do that are mention hear
+
 let addParam = document.getElementById('addParam'); 
 addParam.addEventListener('click',()=>{
     let params = document.getElementById('params');
@@ -56,4 +59,44 @@ addParam.addEventListener('click',()=>{
          })
      }
                 paramscounter++;
-})
+});
+
+//if the submit button are clicked then 
+let submit = document.getElementById('submit');
+
+
+submit.addEventListener('click' , ()=>{
+    // wait for responce
+    document.getElementById('responseJsonText').innerHTML = "please wait...";
+
+    //fetch all data user are enterd 
+    let url = document.getElementById('url').value;
+   let requestType = document.querySelector("input[name='requestType']:checked").value;
+   let contentType = document.querySelector("input[name='contentType']:checked").value;
+
+//    console.log("url is" , url);
+//    console.log("requestType is" , requestType);
+//    console.log("contentType is" , contentType);
+   
+//if user select param optioon instand of json then store all perameter in an object
+  if(contentType == 'params'){
+      let data ={};
+      for(let i = 0 ; i <paramscounter +1 ; i++ ){
+          if( document.getElementById('parameterKey' + (i+1)) != undefined){
+          let key = document.getElementById('parameterKey' + (i+1)).value;
+          let value = document.getElementById('parameterValue' + (i+1)).value;
+          data[key] = value ;
+        }
+      }
+  }
+});
+
+
+
+
+
+
+
+
+
+
